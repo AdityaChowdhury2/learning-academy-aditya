@@ -13,13 +13,11 @@ const Main = () => {
 		setRemainingCreditHours(remainingCreditHours - course.creditHours);
 		setTotalCreditHours(totalCreditHours + course.creditHours);
 	};
-	if (totalCreditHours > 20) {
-		toast.error('You can not add any course');
-	}
-	if (remainingCreditHours < 0) {
-		toast.error('You credit hour is fulfilled');
-	}
-	console.log(totalCreditHours, remainingCreditHours);
+
+	if (totalCreditHours === 20)
+		toast.success(
+			'Congratulations you have successfully completed the course registration'
+		);
 	useEffect(() => {
 		fetch('data.json')
 			.then(res => res.json())
@@ -27,8 +25,17 @@ const Main = () => {
 	}, []);
 	return (
 		<div className="container flex flex-col-reverse xl:flex-row gap-6">
-			<Courses courses={courses} handleSelect={handleSelect} />
-			<Cart cart={cart} />
+			<Courses
+				courses={courses}
+				handleSelect={handleSelect}
+				cart={cart}
+				remainingCreditHours={remainingCreditHours}
+			/>
+			<Cart
+				cart={cart}
+				remainingCreditHours={remainingCreditHours}
+				totalCreditHours={totalCreditHours}
+			/>
 		</div>
 	);
 };

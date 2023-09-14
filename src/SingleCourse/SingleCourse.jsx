@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { BsCurrencyDollar } from 'react-icons/bs';
 import { FiBookOpen } from 'react-icons/fi';
 
-const SingleCourse = ({ course, handleSelect }) => {
-	const [isAdded, setIsAdded] = useState(false);
+const SingleCourse = ({ course, handleSelect, cart, remainingCreditHours }) => {
+	const isAdded = cart.find(cartCourse => cartCourse.id === course.id);
 	// console.log(course);
 	const { courseImage, courseName, description, creditHours, price } = course;
 	return (
@@ -30,12 +29,15 @@ const SingleCourse = ({ course, handleSelect }) => {
 				<button
 					className="btn bg-sky-500 text-white capitalize w-full hover:bg-sky-600"
 					onClick={() => {
-						setIsAdded(true);
-						if (!isAdded) {
+						if (!isAdded && remainingCreditHours >= course.creditHours) {
 							handleSelect(course);
-							toast.success('Added successfully');
+							toast.success('Course added successfully');
+						} else if (remainingCreditHours < course.creditHours) {
+							toast.error(
+								'course cannot be added cause remaining is less than course creditHours'
+							);
 						} else {
-							toast.error('Already added');
+							toast.error('Course already added');
 						}
 					}}
 				>
@@ -49,6 +51,8 @@ const SingleCourse = ({ course, handleSelect }) => {
 SingleCourse.propTypes = {
 	course: PropTypes.object.isRequired,
 	handleSelect: PropTypes.func.isRequired,
+	cart: PropTypes.array.isRequired,
+	remainingCreditHours: PropTypes.number.isRequired,
 };
 
 export default SingleCourse;
