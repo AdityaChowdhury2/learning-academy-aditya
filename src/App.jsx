@@ -6,7 +6,7 @@ import Main from './Main/Main';
 function App() {
 	return (
 		<>
-			<Toaster />
+			<Toaster position="top-right" />
 			<Header />
 			<Main />
 		</>

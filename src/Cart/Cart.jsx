@@ -1,7 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
-const Cart = () => {
+const Cart = ({ cart }) => {
 	return (
 		<div className="xl:w-1/4 flex-1">
 			<div className="bg-base-100 p-6 rounded-lg">
@@ -26,6 +25,8 @@ const Cart = () => {
 	);
 };
 
-Cart.propTypes = {};
+Cart.propTypes = {
+	cart: PropTypes.object.isRequired,
+};
 
 export default Cart;

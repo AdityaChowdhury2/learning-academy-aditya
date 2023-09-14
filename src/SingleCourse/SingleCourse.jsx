@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 import { BsCurrencyDollar } from 'react-icons/bs';
 import { FiBookOpen } from 'react-icons/fi';
 
 const SingleCourse = ({ course, handleSelect }) => {
+	const [isAdded, setIsAdded] = useState(false);
 	// console.log(course);
 	const { courseImage, courseName, description, creditHours, price } = course;
 	return (
@@ -26,7 +29,15 @@ const SingleCourse = ({ course, handleSelect }) => {
 				</div>
 				<button
 					className="btn bg-sky-500 text-white capitalize w-full hover:bg-sky-600"
-					onClick={() => handleSelect(course)}
+					onClick={() => {
+						setIsAdded(true);
+						if (!isAdded) {
+							handleSelect(course);
+							toast.success('Added successfully');
+						} else {
+							toast.error('Already added');
+						}
+					}}
 				>
 					Select
 				</button>
