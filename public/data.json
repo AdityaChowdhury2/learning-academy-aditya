@@ -1,0 +1,74 @@
+[
+    {
+    "id": 1,
+    "courseName": "Introduction to C Programming",
+    "courseImage": "https://i.ibb.co/0cywBpV/c-programming.png",
+    "creditHours": 3,
+    "price": 490.99,
+    "description": "Learn the fundamentals of C programming and kickstart your journey in the world of coding."
+    },
+    {
+    "id": 2,
+    "courseName": "Introduction to Algorithms",
+    "courseImage": "https://i.ibb.co/Sf6kdh7/algorithms.png",
+    "creditHours": 4,
+    "price": 590.99,
+    "description": "Explore the fascinating world of algorithms and problem-solving techniques."
+    },
+    {
+    "id": 3,
+    "courseName": "Introduction to C++ for DSA",
+    "courseImage": "https://i.ibb.co/dMxbnkJ/cpp-for-dsa.png",
+    "creditHours": 6,
+    "price": 540.99,
+    "description": "Master C++ programming while preparing for competitive programming and data structures."
+    },
+    {
+    "id": 4,
+    "courseName": "Basic Data Structures",
+    "courseImage": "https://i.ibb.co/2jJ5qxW/data-structures.png",
+    "creditHours": 3,
+    "price": 490.99,
+    "description": "Build a strong foundation in essential data structures for efficient coding."
+    },
+    {
+    "id": 5,
+    "courseName": "Software Engineering",
+    "courseImage": "https://i.ibb.co/VTGgthV/software-engineering.png",
+    "creditHours": 4,
+    "price": 690.99,
+    "description": "Dive into the principles and practices of software engineering to create robust and scalable applications."
+    },
+    {
+    "id": 6,
+    "courseName": "AWS, Cloud Computing",
+    "courseImage": "https://i.ibb.co/ZgWRkF7/aws-cloud.png",
+    "creditHours": 3,
+    "price": 590.99,
+    "description": "Harness the power of AWS and cloud computing to deploy and manage scalable applications."
+    },
+    {
+    "id": 7,
+    "courseName": "Database (MySQL)",
+    "courseImage": "https://i.ibb.co/wRyBCV6/mysql.png",
+    "creditHours": 6,
+    "price": 490.99,
+    "description": "Master the MySQL database management system for efficient data storage and retrieval."
+    },
+    {
+    "id": 8,
+    "courseName": "Problem-Solving Part",
+    "courseImage": "https://i.ibb.co/rZcGVr2/problem-solving.png",
+    "creditHours": 2,
+    "price": 390.99,
+    "description": "Enhance your problem-solving skills with this practical course designed to tackle real-world challenges."
+    },
+    {
+    "id": 9,
+    "courseName": "Introduction to OOP Python",
+    "courseImage": "https://i.ibb.co/k0WkYRG/oops-python.png",
+    "creditHours": 7,
+    "price": 199.99,
+    "description": "This is a placeholder for your custom course. Add your own course name, image, credit hours, price, and description."
+    }
+]
