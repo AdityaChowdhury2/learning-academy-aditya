@@ -36,7 +36,7 @@ const Main = () => {
 			});
 	}, []);
 	return (
-		<div className="container flex flex-col-reverse xl:flex-row gap-6">
+		<div className="container flex flex-col-reverse xl:flex-row gap-6 px-4">
 			<Courses
 				courses={courses}
 				handleSelect={handleSelect}

@@ -20,9 +20,9 @@ const SingleCourse = ({ course, handleSelect }) => {
 
 				<div className="flex items-center">
 					<BsCurrencyDollar />
-					<p className="ml-2">Price: {price}</p>
+					<p className="ml-2 text-sm ">Price: {price}</p>
 					<FiBookOpen />
-					<p className="ml-2">Credit: {creditHours}hr</p>
+					<p className="ml-2 text-sm">Credit: {creditHours}hr</p>
 				</div>
 				<button
 					className="btn bg-sky-500 text-white capitalize w-full hover:bg-sky-600"
