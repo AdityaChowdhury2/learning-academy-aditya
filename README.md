@@ -45,4 +45,4 @@ When select button is clicked the event handler set the the **remainingCreditHou
 
 ### setTotalCreditHours()
 
-the event handler also calculate the total credit hours for selected course. And set it to the **totalCreditHours**.
+the event handler also calculate the total credit hours for selected course by adding the course credit hours with the **totalCreditHours** state. And set it to the **totalCreditHours**.
