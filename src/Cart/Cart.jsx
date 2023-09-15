@@ -1,12 +1,7 @@
 import PropTypes from 'prop-types';
-// import toast from 'react-hot-toast';
 
 const Cart = ({ cart, totalCreditHours, remainingCreditHours }) => {
 	const totalPrice = cart.reduce((prev, cart) => prev + cart.price, 0);
-	// totalCreditHours === 20 &&
-	// 	toast.success(
-	// 		'Congratulations You have successfully completed the course Registration process'
-	// 	);
 	return (
 		<div className="xl:w-1/4 flex-1">
 			<div className="bg-base-100 p-6 rounded-lg sticky top-10">

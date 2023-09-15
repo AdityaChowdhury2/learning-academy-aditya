@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import SingleCourse from '../SingleCourse/SingleCourse';
 
-const Courses = ({ courses, handleSelect, cart, remainingCreditHours }) => {
-	console.log(courses.length);
+const Courses = ({ courses, handleSelect }) => {
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:w-3/4">
 			{courses.map(course => (
@@ -10,8 +9,6 @@ const Courses = ({ courses, handleSelect, cart, remainingCreditHours }) => {
 					key={course.id}
 					course={course}
 					handleSelect={handleSelect}
-					cart={cart}
-					remainingCreditHours={remainingCreditHours}
 				/>
 			))}
 		</div>
@@ -21,8 +18,6 @@ const Courses = ({ courses, handleSelect, cart, remainingCreditHours }) => {
 Courses.propTypes = {
 	courses: PropTypes.array.isRequired,
 	handleSelect: PropTypes.func.isRequired,
-	cart: PropTypes.array.isRequired,
-	remainingCreditHours: PropTypes.number.isRequired,
 };
 
 export default Courses;

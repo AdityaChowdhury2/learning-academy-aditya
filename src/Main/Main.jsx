@@ -31,7 +31,9 @@ const Main = () => {
 	useEffect(() => {
 		fetch('data.json')
 			.then(res => res.json())
-			.then(data => setCourses(data));
+			.then(data => {
+				setCourses(data);
+			});
 	}, []);
 	return (
 		<div className="container flex flex-col-reverse xl:flex-row gap-6">
