@@ -9,15 +9,25 @@ const Main = () => {
 	const [remainingCreditHours, setRemainingCreditHours] = useState(20);
 	const [totalCreditHours, setTotalCreditHours] = useState(0);
 	const handleSelect = course => {
-		setCart([...cart, course]);
-		setRemainingCreditHours(remainingCreditHours - course.creditHours);
-		setTotalCreditHours(totalCreditHours + course.creditHours);
+		const isExist = cart.find(cartCourse => cartCourse.id === course.id);
+		const totalCreditHoursNow = totalCreditHours + course.creditHours;
+		if (!isExist && remainingCreditHours >= course.creditHours) {
+			toast.success('Course Added successfully');
+			setCart([...cart, course]);
+			setRemainingCreditHours(remainingCreditHours - course.creditHours);
+			setTotalCreditHours(totalCreditHoursNow);
+		} else if (isExist) {
+			toast.error('Course already exists');
+		} else {
+			toast.error('Course Credit Hours is not available');
+		}
+		if (totalCreditHoursNow === 20) {
+			toast.success(
+				'Congratulations You have successfully completed the course Registration process'
+			);
+		}
 	};
 
-	if (totalCreditHours === 20)
-		toast.success(
-			'Congratulations you have successfully completed the course registration'
-		);
 	useEffect(() => {
 		fetch('data.json')
 			.then(res => res.json())
